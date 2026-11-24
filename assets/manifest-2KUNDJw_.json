@@ -1,0 +1,916 @@
+{
+  "versao": 1,
+  "gerado_por": "tools/blender/build_assets.py, Blender 5.3.0",
+  "origem": "modelado por código; sem textura, sem arte de terceiros",
+  "unidade": "1 unidade = 1 tile",
+  "eixos": "no three.js: Y para cima, a frente do modelo aponta para +Z, origem no chão e no centro; _e fica em -X e _d em +X",
+  "pivo": "posição do pivô de cada parte nos eixos do three.js, relativa à origem do modelo (não ao pai)",
+  "cor": {
+    "modo": "vertice",
+    "atributo_gltf": "COLOR_0",
+    "atributo_three": "color",
+    "espaco": "linear",
+    "normais": "facetadas, já no arquivo"
+  },
+  "materiais": {
+    "ator": "MeshLambertMaterial({ vertexColors: true }) com o patch da máscara e o piso MASCARA.pisoPessoa",
+    "objetivo": "MeshLambertMaterial({ vertexColors: true }) com o patch da máscara e o piso MASCARA.pisoObjetivo",
+    "ameaca": "MeshLambertMaterial({ vertexColors: true }) com o patch da máscara, sem piso",
+    "cenario": "MeshLambertMaterial({ vertexColors: true }) com o patch da máscara",
+    "emissivo": "MeshBasicMaterial({ vertexColors: true }), sem luz e fora do patch da máscara"
+  },
+  "paleta": {
+    "breu": "#06080B",
+    "noite": "#141C26",
+    "luar": "#8496AA",
+    "lodo": "#8A7862",
+    "madeira": "#3B2E26",
+    "taipa": "#A8704A",
+    "algodao": "#F2EAD6",
+    "chama": "#FFB347",
+    "candeia": "#FFD9A0",
+    "zinabre": "#3EC9A7",
+    "agua": "#0C2A33",
+    "espuma": "#A9DCE3",
+    "limo": "#1E2A22",
+    "quaresma": "#B25CFF"
+  },
+  "misturas": {
+    "palha": {
+      "de": "algodao",
+      "com": "lodo",
+      "quanto": 0.3
+    },
+    "pano": {
+      "de": "algodao",
+      "com": "lodo",
+      "quanto": 0.45
+    },
+    "ferro": {
+      "de": "luar",
+      "com": "algodao",
+      "quanto": 0.35
+    },
+    "limo_claro": {
+      "de": "limo",
+      "com": "luar",
+      "quanto": 0.22
+    },
+    "limo_palido": {
+      "de": "limo",
+      "com": "luar",
+      "quanto": 0.45
+    },
+    "taipa_escura": {
+      "de": "taipa",
+      "com": "madeira",
+      "quanto": 0.5
+    },
+    "ferrugem": {
+      "de": "taipa",
+      "com": "madeira",
+      "quanto": 0.35
+    },
+    "tabua": {
+      "de": "madeira",
+      "com": "lodo",
+      "quanto": 0.45
+    },
+    "bronze": {
+      "de": "luar",
+      "com": "madeira",
+      "quanto": 0.3
+    },
+    "zinabre_escuro": {
+      "de": "zinabre",
+      "com": "limo",
+      "quanto": 0.45
+    },
+    "zinabre_claro": {
+      "de": "zinabre",
+      "com": "algodao",
+      "quanto": 0.45
+    },
+    "farol": {
+      "de": "chama",
+      "com": "algodao",
+      "quanto": 0.5
+    },
+    "terra": {
+      "de": "lodo",
+      "com": "madeira",
+      "quanto": 0.4
+    }
+  },
+  "modelos": [
+    {
+      "id": "lanterneiro",
+      "arquivo": "lanterneiro.glb",
+      "prioridade": 1,
+      "classe": "indispensavel",
+      "raiz": "lanterneiro",
+      "instanciavel": false,
+      "dimensoes": {
+        "largura": 0.651,
+        "profundidade": 0.821,
+        "altura": 1.501
+      },
+      "triangulos": 232,
+      "chamadas_de_desenho": 8,
+      "partes": [
+        {
+          "nome": "lanterneiro",
+          "tipo": "vazio",
+          "pai": null,
+          "pivo": [
+            0.0,
+            0.0,
+            -0.0
+          ]
+        },
+        {
+          "nome": "corpo",
+          "tipo": "malha",
+          "pai": "lanterneiro",
+          "pivo": [
+            0.0,
+            0.3,
+            -0.0
+          ],
+          "triangulos": 12,
+          "cor": "vertice",
+          "material": "ator"
+        },
+        {
+          "nome": "braco_d",
+          "tipo": "malha",
+          "pai": "corpo",
+          "pivo": [
+            0.235,
+            0.7,
+            -0.0
+          ],
+          "triangulos": 24,
+          "cor": "vertice",
+          "material": "ator"
+        },
+        {
+          "nome": "lampiao",
+          "tipo": "malha",
+          "pai": "braco_d",
+          "pivo": [
+            0.235,
+            0.426,
+            0.192
+          ],
+          "triangulos": 52,
+          "cor": "vertice",
+          "material": "ator"
+        },
+        {
+          "nome": "chama",
+          "tipo": "malha",
+          "pai": "lampiao",
+          "pivo": [
+            0.255,
+            1.156,
+            0.432
+          ],
+          "triangulos": 16,
+          "cor": "vertice",
+          "material": "emissivo"
+        },
+        {
+          "nome": "braco_e",
+          "tipo": "malha",
+          "pai": "corpo",
+          "pivo": [
+            -0.235,
+            0.7,
+            -0.0
+          ],
+          "triangulos": 24,
+          "cor": "vertice",
+          "material": "ator"
+        },
+        {
+          "nome": "cabeca",
+          "tipo": "malha",
+          "pai": "corpo",
+          "pivo": [
+            0.0,
+            0.76,
+            -0.0
+          ],
+          "triangulos": 80,
+          "cor": "vertice",
+          "material": "ator"
+        },
+        {
+          "nome": "perna_d",
+          "tipo": "malha",
+          "pai": "lanterneiro",
+          "pivo": [
+            0.085,
+            0.3,
+            -0.0
+          ],
+          "triangulos": 12,
+          "cor": "vertice",
+          "material": "ator"
+        },
+        {
+          "nome": "perna_e",
+          "tipo": "malha",
+          "pai": "lanterneiro",
+          "pivo": [
+            -0.085,
+            0.3,
+            -0.0
+          ],
+          "triangulos": 12,
+          "cor": "vertice",
+          "material": "ator"
+        }
+      ],
+      "caixa_cinza": "cilindro 0,22 x 1,0 algodao + disco 0,31 palha + esfera emissiva a 1,35 de altura"
+    },
+    {
+      "id": "cavador",
+      "arquivo": "cavador.glb",
+      "prioridade": 2,
+      "classe": "indispensavel",
+      "raiz": "cavador",
+      "instanciavel": false,
+      "dimensoes": {
+        "largura": 0.748,
+        "profundidade": 0.306,
+        "altura": 1.381
+      },
+      "triangulos": 128,
+      "chamadas_de_desenho": 7,
+      "partes": [
+        {
+          "nome": "cavador",
+          "tipo": "vazio",
+          "pai": null,
+          "pivo": [
+            0.0,
+            0.0,
+            -0.0
+          ]
+        },
+        {
+          "nome": "corpo",
+          "tipo": "malha",
+          "pai": "cavador",
+          "pivo": [
+            0.0,
+            0.3,
+            -0.0
+          ],
+          "triangulos": 12,
+          "cor": "vertice",
+          "material": "ator"
+        },
+        {
+          "nome": "braco_d",
+          "tipo": "malha",
+          "pai": "corpo",
+          "pivo": [
+            0.268,
+            0.7,
+            -0.0
+          ],
+          "triangulos": 24,
+          "cor": "vertice",
+          "material": "ator"
+        },
+        {
+          "nome": "braco_e",
+          "tipo": "malha",
+          "pai": "corpo",
+          "pivo": [
+            -0.268,
+            0.7,
+            -0.0
+          ],
+          "triangulos": 24,
+          "cor": "vertice",
+          "material": "ator"
+        },
+        {
+          "nome": "cabeca",
+          "tipo": "malha",
+          "pai": "corpo",
+          "pivo": [
+            0.0,
+            0.74,
+            -0.0
+          ],
+          "triangulos": 16,
+          "cor": "vertice",
+          "material": "ator"
+        },
+        {
+          "nome": "carga",
+          "tipo": "vazio",
+          "pai": "corpo",
+          "pivo": [
+            0.0,
+            0.5,
+            0.26
+          ]
+        },
+        {
+          "nome": "pa",
+          "tipo": "malha",
+          "pai": "corpo",
+          "pivo": [
+            0.03,
+            0.8,
+            -0.165
+          ],
+          "triangulos": 28,
+          "cor": "vertice",
+          "material": "ator"
+        },
+        {
+          "nome": "perna_d",
+          "tipo": "malha",
+          "pai": "cavador",
+          "pivo": [
+            0.1,
+            0.3,
+            -0.0
+          ],
+          "triangulos": 12,
+          "cor": "vertice",
+          "material": "ator"
+        },
+        {
+          "nome": "perna_e",
+          "tipo": "malha",
+          "pai": "cavador",
+          "pivo": [
+            -0.1,
+            0.3,
+            -0.0
+          ],
+          "triangulos": 12,
+          "cor": "vertice",
+          "material": "ator"
+        }
+      ],
+      "caixa_cinza": "caixa 0,45 x 0,3 x 1,0 algodao + caixa fina em diagonal"
+    },
+    {
+      "id": "afogado",
+      "arquivo": "afogado.glb",
+      "prioridade": 3,
+      "classe": "indispensavel",
+      "raiz": "afogado",
+      "instanciavel": true,
+      "dimensoes": {
+        "largura": 0.97,
+        "profundidade": 1.234,
+        "altura": 0.691
+      },
+      "triangulos": 162,
+      "chamadas_de_desenho": 2,
+      "partes": [
+        {
+          "nome": "afogado",
+          "tipo": "malha",
+          "pai": null,
+          "pivo": [
+            0.0,
+            0.0,
+            -0.0
+          ],
+          "triangulos": 138,
+          "cor": "vertice",
+          "material": "ameaca"
+        },
+        {
+          "nome": "brilho",
+          "tipo": "malha",
+          "pai": "afogado",
+          "pivo": [
+            0.0,
+            0.0,
+            -0.0
+          ],
+          "triangulos": 24,
+          "cor": "vertice",
+          "material": "emissivo"
+        }
+      ],
+      "caixa_cinza": "icosaedro achatado limo + cone deitado + 2 pontos quaresma"
+    },
+    {
+      "id": "relicario",
+      "arquivo": "relicario.glb",
+      "prioridade": 4,
+      "classe": "indispensavel",
+      "raiz": "relicario",
+      "instanciavel": false,
+      "dimensoes": {
+        "largura": 0.42,
+        "profundidade": 0.3,
+        "altura": 0.292
+      },
+      "triangulos": 60,
+      "chamadas_de_desenho": 2,
+      "partes": [
+        {
+          "nome": "relicario",
+          "tipo": "vazio",
+          "pai": null,
+          "pivo": [
+            0.0,
+            0.0,
+            -0.0
+          ]
+        },
+        {
+          "nome": "caixa",
+          "tipo": "malha",
+          "pai": "relicario",
+          "pivo": [
+            0.0,
+            0.0,
+            -0.0
+          ],
+          "triangulos": 24,
+          "cor": "vertice",
+          "material": "objetivo"
+        },
+        {
+          "nome": "tampa",
+          "tipo": "malha",
+          "pai": "relicario",
+          "pivo": [
+            0.0,
+            0.2,
+            -0.14
+          ],
+          "triangulos": 36,
+          "cor": "vertice",
+          "material": "objetivo"
+        }
+      ],
+      "caixa_cinza": "caixa 0,4 x 0,28 x 0,3 zinabre"
+    },
+    {
+      "id": "sineiro",
+      "arquivo": "sineiro.glb",
+      "prioridade": 5,
+      "classe": "indispensavel",
+      "raiz": "sineiro",
+      "instanciavel": false,
+      "dimensoes": {
+        "largura": 0.981,
+        "profundidade": 0.912,
+        "altura": 2.435
+      },
+      "triangulos": 208,
+      "chamadas_de_desenho": 4,
+      "partes": [
+        {
+          "nome": "sineiro",
+          "tipo": "vazio",
+          "pai": null,
+          "pivo": [
+            0.0,
+            0.0,
+            -0.0
+          ]
+        },
+        {
+          "nome": "corpo",
+          "tipo": "malha",
+          "pai": "sineiro",
+          "pivo": [
+            0.0,
+            0.0,
+            -0.0
+          ],
+          "triangulos": 108,
+          "cor": "vertice",
+          "material": "ameaca"
+        },
+        {
+          "nome": "braco",
+          "tipo": "malha",
+          "pai": "corpo",
+          "pivo": [
+            0.27,
+            1.6,
+            0.07
+          ],
+          "triangulos": 36,
+          "cor": "vertice",
+          "material": "ameaca"
+        },
+        {
+          "nome": "sineta",
+          "tipo": "malha",
+          "pai": "braco",
+          "pivo": [
+            0.42,
+            2.34,
+            0.2
+          ],
+          "triangulos": 44,
+          "cor": "vertice",
+          "material": "emissivo"
+        },
+        {
+          "nome": "cabeca",
+          "tipo": "malha",
+          "pai": "corpo",
+          "pivo": [
+            0.0,
+            1.66,
+            0.1
+          ],
+          "triangulos": 20,
+          "cor": "vertice",
+          "material": "ameaca"
+        }
+      ],
+      "caixa_cinza": "cone de 7 lados 0,45 x 2,4 limo + ponto quaresma no alto"
+    },
+    {
+      "id": "torre",
+      "arquivo": "torre.glb",
+      "prioridade": 6,
+      "classe": "indispensavel",
+      "raiz": "torre",
+      "instanciavel": false,
+      "dimensoes": {
+        "largura": 2.0,
+        "profundidade": 2.0,
+        "altura": 5.273
+      },
+      "triangulos": 200,
+      "chamadas_de_desenho": 2,
+      "partes": [
+        {
+          "nome": "torre",
+          "tipo": "malha",
+          "pai": null,
+          "pivo": [
+            0.0,
+            0.0,
+            -0.0
+          ],
+          "triangulos": 156,
+          "cor": "vertice",
+          "material": "cenario"
+        },
+        {
+          "nome": "sino",
+          "tipo": "malha",
+          "pai": "torre",
+          "pivo": [
+            0.0,
+            4.49,
+            -0.0
+          ],
+          "triangulos": 44,
+          "cor": "vertice",
+          "material": "cenario"
+        }
+      ],
+      "caixa_cinza": "caixa 2 x 2 x 3,5 taipa + 4 pilares + caixa pendurada"
+    },
+    {
+      "id": "caminhao",
+      "arquivo": "caminhao.glb",
+      "prioridade": 7,
+      "classe": "indispensavel",
+      "raiz": "caminhao",
+      "instanciavel": false,
+      "dimensoes": {
+        "largura": 1.92,
+        "profundidade": 3.99,
+        "altura": 1.65
+      },
+      "triangulos": 222,
+      "chamadas_de_desenho": 2,
+      "partes": [
+        {
+          "nome": "caminhao",
+          "tipo": "vazio",
+          "pai": null,
+          "pivo": [
+            0.0,
+            0.0,
+            -0.0
+          ]
+        },
+        {
+          "nome": "corpo",
+          "tipo": "malha",
+          "pai": "caminhao",
+          "pivo": [
+            0.0,
+            0.0,
+            -0.0
+          ],
+          "triangulos": 182,
+          "cor": "vertice",
+          "material": "cenario"
+        },
+        {
+          "nome": "farois",
+          "tipo": "malha",
+          "pai": "caminhao",
+          "pivo": [
+            0.0,
+            0.0,
+            -0.0
+          ],
+          "triangulos": 40,
+          "cor": "vertice",
+          "material": "emissivo"
+        },
+        {
+          "nome": "vaga_1",
+          "tipo": "vazio",
+          "pai": "caminhao",
+          "pivo": [
+            -0.55,
+            0.75,
+            -0.5
+          ]
+        },
+        {
+          "nome": "vaga_2",
+          "tipo": "vazio",
+          "pai": "caminhao",
+          "pivo": [
+            0.0,
+            0.75,
+            -0.5
+          ]
+        },
+        {
+          "nome": "vaga_3",
+          "tipo": "vazio",
+          "pai": "caminhao",
+          "pivo": [
+            0.55,
+            0.75,
+            -0.5
+          ]
+        },
+        {
+          "nome": "vaga_4",
+          "tipo": "vazio",
+          "pai": "caminhao",
+          "pivo": [
+            -0.3,
+            0.75,
+            -1.1
+          ]
+        },
+        {
+          "nome": "vaga_5",
+          "tipo": "vazio",
+          "pai": "caminhao",
+          "pivo": [
+            0.3,
+            0.75,
+            -1.1
+          ]
+        }
+      ],
+      "caixa_cinza": "2 caixas madeira + 2 esferas emissivas"
+    },
+    {
+      "id": "lampiao_fixo",
+      "arquivo": "lampiao_fixo.glb",
+      "prioridade": 8,
+      "classe": "desejavel",
+      "raiz": "lampiao_fixo",
+      "instanciavel": false,
+      "dimensoes": {
+        "largura": 0.332,
+        "profundidade": 0.473,
+        "altura": 1.951
+      },
+      "triangulos": 96,
+      "chamadas_de_desenho": 3,
+      "partes": [
+        {
+          "nome": "lampiao_fixo",
+          "tipo": "vazio",
+          "pai": null,
+          "pivo": [
+            0.0,
+            0.0,
+            -0.0
+          ]
+        },
+        {
+          "nome": "lanterna",
+          "tipo": "malha",
+          "pai": "lampiao_fixo",
+          "pivo": [
+            0.07,
+            1.89,
+            0.22
+          ],
+          "triangulos": 36,
+          "cor": "vertice",
+          "material": "cenario"
+        },
+        {
+          "nome": "chama",
+          "tipo": "malha",
+          "pai": "lanterna",
+          "pivo": [
+            0.07,
+            1.5,
+            0.22
+          ],
+          "triangulos": 16,
+          "cor": "vertice",
+          "material": "emissivo"
+        },
+        {
+          "nome": "poste",
+          "tipo": "malha",
+          "pai": "lampiao_fixo",
+          "pivo": [
+            0.0,
+            0.0,
+            -0.0
+          ],
+          "triangulos": 44,
+          "cor": "vertice",
+          "material": "cenario"
+        }
+      ],
+      "caixa_cinza": "cilindro fino + esfera emissiva"
+    },
+    {
+      "id": "porta",
+      "arquivo": "porta.glb",
+      "prioridade": 9,
+      "classe": "desejavel",
+      "raiz": "portal",
+      "instanciavel": false,
+      "dimensoes": {
+        "largura": 1.041,
+        "profundidade": 0.12,
+        "altura": 1.452
+      },
+      "triangulos": 72,
+      "chamadas_de_desenho": 2,
+      "partes": [
+        {
+          "nome": "portal",
+          "tipo": "malha",
+          "pai": null,
+          "pivo": [
+            0.0,
+            0.0,
+            -0.0
+          ],
+          "triangulos": 36,
+          "cor": "vertice",
+          "material": "cenario"
+        },
+        {
+          "nome": "porta",
+          "tipo": "malha",
+          "pai": "portal",
+          "pivo": [
+            0.0,
+            0.01,
+            -0.0
+          ],
+          "triangulos": 36,
+          "cor": "vertice",
+          "material": "cenario"
+        }
+      ],
+      "caixa_cinza": "caixa madeira em pé ou deitada"
+    },
+    {
+      "id": "cova",
+      "arquivo": "cova.glb",
+      "prioridade": 10,
+      "classe": "desejavel",
+      "raiz": "cova",
+      "instanciavel": false,
+      "dimensoes": {
+        "largura": 0.759,
+        "profundidade": 1.55,
+        "altura": 1.043
+      },
+      "triangulos": 86,
+      "chamadas_de_desenho": 4,
+      "partes": [
+        {
+          "nome": "cova",
+          "tipo": "vazio",
+          "pai": null,
+          "pivo": [
+            0.0,
+            0.0,
+            -0.0
+          ]
+        },
+        {
+          "nome": "buraco",
+          "tipo": "malha",
+          "pai": "cova",
+          "pivo": [
+            0.0,
+            0.0,
+            -0.0
+          ],
+          "triangulos": 2,
+          "cor": "vertice",
+          "material": "cenario"
+        },
+        {
+          "nome": "cruz",
+          "tipo": "malha",
+          "pai": "cova",
+          "pivo": [
+            0.0,
+            0.0,
+            0.62
+          ],
+          "triangulos": 24,
+          "cor": "vertice",
+          "material": "cenario"
+        },
+        {
+          "nome": "monte",
+          "tipo": "malha",
+          "pai": "cova",
+          "pivo": [
+            0.0,
+            0.0,
+            -0.0
+          ],
+          "triangulos": 12,
+          "cor": "vertice",
+          "material": "cenario"
+        },
+        {
+          "nome": "lapide",
+          "tipo": "malha",
+          "pai": "monte",
+          "pivo": [
+            0.0,
+            0.0,
+            -0.84
+          ],
+          "triangulos": 48,
+          "cor": "vertice",
+          "material": "cenario"
+        }
+      ],
+      "caixa_cinza": "caixa baixa + 2 caixas em cruz"
+    },
+    {
+      "id": "toco",
+      "arquivo": "toco.glb",
+      "prioridade": 11,
+      "classe": "desejavel",
+      "raiz": "toco",
+      "instanciavel": false,
+      "dimensoes": {
+        "largura": 0.481,
+        "profundidade": 0.427,
+        "altura": 1.52
+      },
+      "triangulos": 50,
+      "chamadas_de_desenho": 1,
+      "partes": [
+        {
+          "nome": "toco",
+          "tipo": "malha",
+          "pai": null,
+          "pivo": [
+            0.0,
+            0.0,
+            -0.0
+          ],
+          "triangulos": 50,
+          "cor": "vertice",
+          "material": "cenario"
+        }
+      ],
+      "caixa_cinza": "nada"
+    }
+  ]
+}
